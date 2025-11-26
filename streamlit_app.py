@@ -3,10 +3,18 @@ import google.genai as genai
 from chromadb import PersistentClient
 import os
 
-api_key = st.secrets["GEMINI_API_KEY"]
+from google.genai import GoogleGenAI 
 
-# 2. Configura genai con la clave obtenida de forma segura
-genai.configure(api_key=api_key)
+# Si usas funciones específicas (como embed_content o generate_text), 
+# puedes seguir llamándolas desde el cliente que inicializaremos
+# o actualizar tu código para usar los métodos del cliente.
+
+# --- CONFIGURACIÓN DE LA LLAVE SEGURA ---
+api_key = st.secrets["GEMINI_API_KEY"] 
+
+# 2. Inicializa el cliente GoogleGenAI con la clave
+# Esto reemplaza a genai.configure()
+client = GoogleGenAI(api_key=api_key)
 MODEL = "gemini-1.5-flash"
 
 # Load Chroma
