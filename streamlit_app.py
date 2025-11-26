@@ -4,7 +4,7 @@ from chromadb import PersistentClient
 import os
 
 # Load Gemini
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key="AIzaSyAweD6F5ifSXN_8jowo7W5ztyrZxMZOUII")
 MODEL = "gemini-1.5-flash"
 
 # Load Chroma
