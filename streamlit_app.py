@@ -3,8 +3,10 @@ import google.genai as genai
 from chromadb import PersistentClient
 import os
 
-# Load Gemini
-genai.configure(api_key="AIzaSyAweD6F5ifSXN_8jowo7W5ztyrZxMZOUII")
+api_key = st.secrets["GEMINI_API_KEY"]
+
+# 2. Configura genai con la clave obtenida de forma segura
+genai.configure(api_key=api_key)
 MODEL = "gemini-1.5-flash"
 
 # Load Chroma
